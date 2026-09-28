@@ -1,25 +1,32 @@
 # LendingClub Credit Risk & Loan Portfolio Analytics
 
-## Project Overview
+A data-driven credit risk analysis project built around LendingClub loan performance data. The project combines Python-based exploration, SQL-based risk analysis, and a Power BI dashboard to understand how borrower and loan characteristics relate to observed default behavior.
 
-End-to-end credit risk analytics project analyzing 1.35M+ LendingClub loan records using Python, SQL, PostgreSQL, and Power BI.
+## Overview
 
-The project explores borrower and loan characteristics associated with different observed default rates and turns the analysis into an interactive Power BI dashboard.
+This project analyzes more than 1.35 million LendingClub loan records to study:
+
+- FICO score behavior
+- Debt-to-income (DTI) patterns
+- Annual income trends
+- Loan amount distribution
+- Employment length effects
+- Loan purpose differences
+- Home ownership influence
+- Geographic variation in portfolio risk
+
+The goal is to uncover patterns in default rates and translate them into actionable portfolio insights.
 
 ## Business Problem
 
-The goal is to understand how observed loan default rates vary across important borrower and loan characteristics, including:
+LendingClub loan performance varies by borrower profile and loan characteristics. The project examines how observed default rates differ across key dimensions, helping answer questions such as:
 
-- FICO score
-- Debt-to-income (DTI) ratio
-- Annual income
-- Loan amount
-- Employment length
-- Loan purpose
-- Home ownership
-- Geographic location
+- Which borrower segments carry higher default risk?
+- How do DTI and FICO influence outcome risk?
+- Which loan purposes are riskier?
+- How does risk vary by state or region?
 
-## Tools & Technologies
+## Tools and Technologies
 
 - Python
 - Pandas
@@ -32,36 +39,34 @@ The goal is to understand how observed loan default rates vary across important 
 - Power Query
 - Git/GitHub
 
-## Project Workflow
+## Workflow
 
-1. Cleaned the LendingClub loan dataset.
-2. Performed exploratory data analysis in Python.
-3. Investigated missing values, duplicates, distributions, outliers, and data-quality issues.
-4. Used PostgreSQL and SQL for portfolio and default-rate analysis.
-5. Created borrower and loan risk segments using SQL and DAX.
-6. Built an interactive Power BI dashboard.
-7. Analyzed observed default-rate differences across credit, borrower, loan, and geographic characteristics.
+1. Clean and prepare the LendingClub dataset.
+2. Perform exploratory data analysis in Python.
+3. Assess data quality, missing values, duplicates, and outliers.
+4. Use SQL to analyze portfolio trends and default behavior.
+5. Segment borrowers by credit and debt characteristics.
+6. Build an interactive Power BI dashboard.
+7. Summarize findings into business-friendly credit risk insights.
 
 ## Dataset
 
-The analysis uses more than 1.35 million LendingClub loan records.
+The analysis uses a large LendingClub loan dataset containing more than 1.35 million records. The full dataset is not included in this repository due to size limitations.
 
-The full dataset is not included in this repository because of its size.
-
-## Dashboard
+## Dashboard Highlights
 
 ### Portfolio Overview
 
 - Total loans
 - Total loan amount
 - Overall default rate
-- Average FICO
+- Average FICO score
 - Average DTI
 - Monthly loan volume
 - Default rate by loan purpose
 - Default rate by DTI category
 - Default rate by FICO category
-- Loan portfolio distribution by purpose
+- Loan distribution by purpose
 
 ### Credit Risk Analysis
 
@@ -69,36 +74,35 @@ The full dataset is not included in this repository because of its size.
 - Default rate by DTI category
 - Default rate by employment length
 - Default rate by home ownership
-- Top states by observed default rate
+- Top states by default rate
 - Geographic loan portfolio analysis
 - Interactive filters for home ownership, purpose, and year
 
 ## Key Findings
 
-The analysis shows meaningful differences in observed default rates across borrower and loan segments.
+The analysis highlights meaningful differences in observed default rates across borrower and loan segments. Some recurring patterns include:
 
-Examples include:
+- Higher-risk behavior appears in certain FICO bands.
+- Borrowers with higher DTI levels show weaker performance in aggregate.
+- Default rates vary across loan purpose and home-ownership groups.
+- State-level differences suggest geographic variation in portfolio risk.
 
-- Default rates vary across FICO categories.
-- Higher DTI categories show higher observed default rates in the analyzed portfolio.
-- Default rates differ across loan purposes and home-ownership categories.
-- Geographic differences can be explored through state-level portfolio and default-rate analysis.
+These findings reflect observed relationships in the dataset and should not be interpreted as causal proof.
 
-These findings describe relationships observed in the dataset and should not be interpreted as proof of causation.
-
-## Project Structure
+## Repository Structure
 
 ```text
-lendingclub-credit-risk-analytics/
-│
+LendingClub-Credit-Risk-Analytics/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-│
-├── notebooks/
-│   └── lendingclub_eda.ipynb
-│
-├── sql/
+├── Cleaned data/
+│   └── cleaned_loans_data.csv
+├── Dashboard/
+│   └── Financial Risk Modeling.pbix
+├── Notebooks/
+│   └── EDA.ipynb
+├── SQL/
 │   ├── 01_data_quality.sql
 │   ├── 02_portfolio_overview.sql
 │   ├── 03_default_analysis.sql
@@ -107,36 +111,36 @@ lendingclub-credit-risk-analytics/
 │   ├── 06_geographic_analysis.sql
 │   ├── 07_risk_segmentation.sql
 │   └── 08_advanced_sql.sql
-│
-├── powerbi/
-│   └── LendingClub_Credit_Risk.pbix
-│
-├── screenshots/
-│   ├── portfolio_overview.png
-│   └── credit_risk_analysis.png
-│
-└── data/
-    └── sample_loans.csv
+├── ScreenShots/
+│   ├── Screenshot 2026-09-23 153542.png
+│   └── Screenshot 2026-09-26 162750.png
+└── .gitignore
 ```
 
-## How to Run
+## Getting Started
 
-### Python
+### 1. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Open `notebooks/lendingclub_eda.ipynb`, update the dataset path if necessary, and run the notebook.
+### 2. Run the notebook
 
-### SQL
+Open the notebook in the Notebooks folder and update the dataset path if necessary before running the analysis.
 
-Load the dataset into PostgreSQL and run the SQL scripts in the `sql/` directory.
+### 3. Run the SQL scripts
 
-### Power BI
+Load the cleaned dataset into PostgreSQL and execute the scripts in the SQL folder in order.
 
-Open `powerbi/LendingClub_Credit_Risk.pbix`, update the data source if necessary, and refresh the model.
+### 4. Open the dashboard
+
+Open the Power BI file in the Dashboard folder and refresh the data source if needed.
 
 ## Disclaimer
 
-This project is for educational and portfolio purposes. The analysis identifies patterns and associations in the historical dataset and is not a production credit-scoring or lending-decision system.
+This project is intended for educational and portfolio purposes. It identifies patterns and associations in historical lending data and is not a production credit-scoring or lending-decision system.
+
+## License
+
+This project is provided as-is for learning and demonstration purposes.
